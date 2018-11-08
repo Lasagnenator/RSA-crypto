@@ -15,7 +15,7 @@ MUST USE ONLY PRIME NUMBERS OR KEYS WILL BE INACCURATE"""
     n = p*q
     pubkey = 0
     prvkey = 0
-    print('N:', n)
+    #print('N:', n)
     totient = (p-1)*(q-1)
     for e in range(q, totient):     #computes public key exponent
         if math.gcd(e, totient) == 1:
@@ -38,7 +38,7 @@ MUST USE ONLY PRIME NUMBERS OR KEYS WILL BE INACCURATE"""
     #print('Prvkey computed in:', str(datetime.now()-start1))
     #print('Private key:', prvkey)
     #print('Total computation time:', datetime.now()-start)
-    return pubkey, prvkey
+    return pubkey, prvkey, n
 
 """RSA encryption using a public key"""
 def encrypt(message, pubkey, n):
