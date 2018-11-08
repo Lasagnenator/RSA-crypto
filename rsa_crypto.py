@@ -46,9 +46,9 @@ def encrypt(message, pubkey, n):
     start = datetime.now()
     m = message
     e = pubkey
-    c = (m**e)%n
-    #c = (exp(m, e))%n
-    print('Encrypted in:', datetime.now()-start)
+    #c = (m**e)%n
+    c = (exp(m, e))%n
+    #print('Encrypted in:', datetime.now()-start)
     return c
 
 """RSA decryption using a private key"""
@@ -59,7 +59,7 @@ def decrypt(encrypted, prvkey, n):
     d = int(prvkey)
     #m = (c**d)%n
     m = (exp(c,d))%n
-    print('Decrypted in:', datetime.now()-start)
+    #print('Decrypted in:', datetime.now()-start)
     return m
 
 """Exponential by squaring used in encrypting and decrypting messages"""
