@@ -22,8 +22,8 @@ MUST USE ONLY PRIME NUMBERS OR KEYS WILL BE INACCURATE"""
             pubkey = e
             break
 
-    print('Pubkey computed in:', str(datetime.now()-start))
-    print('Public key:', pubkey)
+    #print('Pubkey computed in:', str(datetime.now()-start))
+    #print('Public key:', pubkey)
     sqrtn = math.sqrt(n)
 
     for d in range(int(sqrtn), n):     #computes private key exponent
@@ -35,9 +35,10 @@ MUST USE ONLY PRIME NUMBERS OR KEYS WILL BE INACCURATE"""
     if (pubkey == 0) or (prvkey == 0):
         raise ValueError('No combinations found.')
     
-    print('Prvkey computed in:', str(datetime.now()-start1))
-    print('Private key:', prvkey)
-    print('Total computation time:', datetime.now()-start)
+    #print('Prvkey computed in:', str(datetime.now()-start1))
+    #print('Private key:', prvkey)
+    #print('Total computation time:', datetime.now()-start)
+    return pubkey, prvkey
 
 """RSA encryption using a public key"""
 def encrypt(message, pubkey, n):
